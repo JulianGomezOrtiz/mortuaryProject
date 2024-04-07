@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@adonisjs/core": "^6.5.0"
+  }
+}
