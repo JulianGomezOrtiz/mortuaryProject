@@ -10,9 +10,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class User {
     @Id
     private String _id;
-    private String name;
     private  String email;
+    private String name;
     private String password;
+    private Date created_at = new Date();
+    private boolean isBlocked = false;
+    private two_factor_code = two_factor_code;
     @DBRef
     private Role role;
 
@@ -37,9 +40,7 @@ public class User {
         this.password = password;
     }
 
-    public void set_id(String id){
-        this._id=id;
-    }
+    
     public String get_id() {
         return _id;
     }
@@ -63,4 +64,31 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
+
+    public Date getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(Date created_at) {
+        this.created_at = created_at;
+    }
+
+    public boolean isBlocked() {
+        return isBlocked;
+    }
+
+    public void setBlocked(boolean blocked) {
+        isBlocked = blocked;
+    }
+
+    public String getTwo_factor_code() {
+        return two_factor_code;
+    }
+
+    public void setTwo_factor_code(String two_factor_code) {
+        this.two_factor_code = two_factor_code;
+    }
+
+
+
 }
